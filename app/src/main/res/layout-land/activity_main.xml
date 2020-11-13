@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:background="@color/gray"
+            android:ems="10"
+            android:gravity="right|center"
+            android:inputType="textPersonName"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="20pt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/decimalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/AC"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="cleanEvent"
+                    android:text="AC"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+                <Button
+                    android:id="@+id/butBin"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="deciBinLayout"
+                    android:text="Binario"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+                <Button
+                    android:id="@+id/butHex"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="deciHexaLayout"
+                    android:text="Hexadecimal"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+                <Button
+                    android:id="@+id/Multi"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="operatorEvent"
+                    android:text="*"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/but7"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="7"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/but8"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="8"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/but9"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="9"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/Divide"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="operatorEvent"
+                    android:text="/"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/but4"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="4"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/but5"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="5"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/but6"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="6"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/Sumar"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="operatorEvent"
+                    android:text="+"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/but1"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="1"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/but2"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="2"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/but3"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="3"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/Restar"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="operatorEvent"
+                    android:text="-"
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/punto"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="."
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+                <Button
+                    android:id="@+id/but0"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="decimalNumberEvent"
+                    android:text="0"
+                    app:backgroundTint="@color/light_gray"></Button>
+
+                <Button
+                    android:id="@+id/Igual"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="resolvEvent"
+                    android:text="="
+                    app:backgroundTint="@color/medium_gray"></Button>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/hexaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/editText">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/HexAC"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="cleanEvent"
+                    android:text="AC"
+                    app:backgroundTint="@color/red"></Button>
+
+                <Button
+                    android:id="@+id/butHexBin"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaBinLayout"
+                    android:text="Binario"
+                    app:backgroundTint="@color/red"></Button>
+
+                <Button
+                    android:id="@+id/butDec"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaDeciLayout"
+                    android:text="Decimal"
+                    app:backgroundTint="@color/red"></Button>
+
+                <Button
+                    android:id="@+id/HexMulti"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="operatorEvent"
+                    android:text="*"
+                    app:backgroundTint="@color/red"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/Hexbut7"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="7"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut8"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="8"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut9"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="9"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexE"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="E"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexF"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="F"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexDivide"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexOperatorEvent"
+                    android:text="/"
+                    app:backgroundTint="@color/red"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/Hexbut4"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="4"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut5"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="5"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut6"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="6"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexC"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="C"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexD"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="D"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexSumar"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexOperatorEvent"
+                    android:text="+"
+                    app:backgroundTint="@color/red"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/Hexbut1"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="1"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut2"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="2"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut3"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="3"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexA"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="A"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexB"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="B"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexRestar"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexOperatorEvent"
+                    android:text="-"
+                    app:backgroundTint="@color/red"></Button>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/Hexpunto"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="."
+                    app:backgroundTint="@color/red"></Button>
+
+                <Button
+                    android:id="@+id/Hexbut0"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexaNumberEvent"
+                    android:text="0"
+                    app:backgroundTint="@color/light_red"></Button>
+
+                <Button
+                    android:id="@+id/HexIgual"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="hexResolvEvent"
+                    android:text="="
+                    app:backgroundTint="@color/red"></Button>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/binLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/BinAC"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="cleanEvent"
+                    android:text="AC"
+                    app:backgroundTint="@color/purple_700"></Button>
+
+                <Button
+                    android:id="@+id/butBinDec"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binDecimalLayout"
+                    android:text="Decimal"
+                    app:backgroundTint="@color/purple_700"></Button>
+
+                <Button
+                    android:id="@+id/butBinHex"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binHexaLayout"
+                    android:text="Hexadecimal"
+                    app:backgroundTint="@color/purple_700"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/BinMulti"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binOperatorEvent"
+                    android:text="*"
+                    app:backgroundTint="@color/purple_500"></Button>
+
+                <Button
+                    android:id="@+id/BinSumar"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binOperatorEvent"
+                    android:text="+"
+                    app:backgroundTint="@color/purple_500"></Button>
+
+                <Button
+                    android:id="@+id/BinRestar"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binOperatorEvent"
+                    android:text="-"
+                    app:backgroundTint="@color/purple_500"></Button>
+
+                <Button
+                    android:id="@+id/BinDivide"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binOperatorEvent"
+                    android:text="/"
+                    app:backgroundTint="@color/purple_500"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/Binbut1"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binNumberEvent"
+                    android:text="1"
+                    app:backgroundTint="@color/purple_200"></Button>
+
+                <Button
+                    android:id="@+id/Binbut0"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="binNumberEvent"
+                    android:text="0"
+                    app:backgroundTint="@color/purple_200"></Button>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1pt">
+
+                <Button
+                    android:id="@+id/BinEqual"
+                    android:layout_width="30pt"
+                    android:layout_height="30pt"
+                    android:layout_marginRight="2pt"
+                    android:layout_weight="1"
+                    android:onClick="BinResolvEvent"
+                    android:text="="
+                    app:backgroundTint="@color/purple_500"></Button>
+
+
+            </TableRow>
+
+        </TableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
